@@ -4,8 +4,8 @@ let buttonColours=["red","green","blue","yellow"];
 let userClickedPattern=[];
 
 function nextSequence(){
-let ranndomNumber=getRandomInt(4);
-let randomChosenColour=buttonColours[ranndomNumber];
+let randomNumber=getRandomInt(4);
+let randomChosenColour=buttonColours[randomNumber];
 gamePattern.push(randomChosenColour);
 $("#"+randomChosenColour).fadeOut(100).fadeIn(100);
 playAudio(randomChosenColour);
@@ -23,5 +23,6 @@ $(".btn").click(function(){
 let userChosenColor=$(this).attr("id");
 userClickedPattern.push(userChosenColor);
 console.log(userClickedPattern);
-
+$('#'+userChosenColor).fadeOut(100).fadeIn(100);
+playAudio(userChosenColor);
 });
