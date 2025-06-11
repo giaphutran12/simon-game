@@ -45,15 +45,11 @@ function checkAnswer(currentIndex) {
   } else {
     console.log("wrong");
     playAudio("wrong");   
-    $("body").addClass("game-over");
-    setTimeout(function(){
-      $("body").removeClass("game-over");
-    },200);
+    flashGameOverScreen();
     $("#level-title").text("Game over, press any key to restart");
     gameOver();
   }
 }
-
 
 function gameOver(){
   level=0;
@@ -116,4 +112,11 @@ function moveOnToNextSequence() {
   setTimeout(function () {
     nextSequence();
   }, 1000);
+}
+
+function flashGameOverScreen(){
+ $("body").addClass("game-over");
+    setTimeout(function(){
+      $("body").removeClass("game-over");
+    },200);
 }
