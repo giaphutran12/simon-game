@@ -59,8 +59,8 @@ function animatePress(currentColor) {
   }, 100);
 }
 
-function checkAnswer(currentLevel){
-    if (userClickedPattern[currentLevel]===gamePattern[currentLevel]){
+function checkAnswer(currentIndex){
+    if (userClickedPattern[currentIndex]===gamePattern[currentIndex]){
       console.log("success");
        if (userClickedPattern.length===gamePattern.length){
      
