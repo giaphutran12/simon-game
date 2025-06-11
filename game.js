@@ -44,9 +44,30 @@ function checkAnswer(currentIndex) {
     }
   } else {
     console.log("wrong");
+    playAudio("wrong");   
+    $("body").addClass("game-over");
+    setTimeout(function(){
+      $("body").removeClass("game-over");
+    },200);
+    $("#level-title").text("Game over, press any key to restart");
+    gameOver();
   }
 }
-//helper functions
+
+
+function gameOver(){
+  level=0;
+  gamePattern=[];
+  gameStarted=false;
+}
+
+
+//----------------------------------------------------------------------------
+//END OF MAIN CODE
+//----------------------------------------------------------------------------
+
+
+//HELPER FUNCTIONS
 function levelUp() {
   userClickedPattern = [];
   level++;
