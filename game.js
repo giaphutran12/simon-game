@@ -5,8 +5,11 @@ let gameStarted = false;
 let level = 0;
 
 function nextSequence() {
-  gameStarted = true;
+
+  
   userClickedPattern=[];
+  level++;
+  $('#level-title').text("Level "+level);
   let randomNumber=getRandomInt(4);
   let randomColor=buttonColours[randomNumber];
   gamePattern.push(randomColor);
@@ -37,9 +40,12 @@ $("body").keydown(function () {
 $(".btn").click(function () {
   let userChosenColor = $(this).attr("id");
   userClickedPattern.push(userChosenColor)
-  console.log(userClickedPattern);
-  checkAnswer(userClickedPattern.length-1);
+  
+ 
   animatePress(userChosenColor);
+
+  checkAnswer(userClickedPattern.length-1);
+  console.log(userClickedPattern);
 });
 
 function animatePress(currentColor) {
